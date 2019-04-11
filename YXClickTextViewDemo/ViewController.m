@@ -19,24 +19,43 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    YXClickTextView *clickT = [[YXClickTextView alloc] init];
-    [self.view addSubview:clickT];
-    clickT.textColor = [UIColor blackColor];
-    clickT.backgroundColor = [UIColor grayColor];
-    clickT.font = [UIFont systemFontOfSize:14];
-    clickT.textAlignment = NSTextAlignmentLeft;
-    clickT.highlightedBackgroundColor = [UIColor orangeColor];
+    YXClickTextView *textView1 = [[YXClickTextView alloc] init];
+    [self.view addSubview:textView1];
+    textView1.textColor = [UIColor blackColor];
+    textView1.font = [UIFont systemFontOfSize:14];
+    textView1.textAlignment = NSTextAlignmentLeft;
+    textView1.highlightedBackgroundColor = [UIColor orangeColor];
     
-    clickT.autoWidth = YES;
-    clickT.autoHeight = YES; // Default is 'YES'
+    textView1.autoWidth = YES;
+    textView1.autoHeight = YES; // Default is 'YES'
     
-    clickT.frame = CGRectMake(0, 100, 300, 200);
-    clickT.text = @"1.每个结点最多有两棵子树，所以二叉树种不存在度大于2的结点；2.左子树和右子树是有顺序的，次序不能任意颠倒；3.即使树中某结点只有一课子树，也要区分它是左子树还是右子树";
-    clickT.yxkit_assist.attributedSubstring(@"右子树是有顺序的", [UIColor orangeColor]);
-    [clickT addClickTexts:@[@"右子树是有顺序的",] callback:^(NSString *text, NSRange range) {
+    textView1.frame = CGRectMake(20, 140, 300, 30);
+    textView1.text = @"您已阅读并同意《注册与服务协议》";
+    textView1.yxkit_assist.attributedSubstring(@"《注册与服务协议》", [UIColor blueColor]);
+    [textView1 addClickTexts:@[@"《注册与服务协议》",] callback:^(NSString *text, NSRange range) {
         NSString *msg = [NSString stringWithFormat:@"text:%@,range:%@",text,NSStringFromRange(range)];
         NSLog(@"%@",msg);
-
+    }];
+    
+    
+    
+    YXClickTextView *textView2 = [[YXClickTextView alloc] init];
+    [self.view addSubview:textView2];
+    textView2.textColor = [UIColor blackColor];
+    textView2.backgroundColor = [UIColor grayColor];
+    textView2.font = [UIFont systemFontOfSize:14];
+    textView2.textAlignment = NSTextAlignmentLeft;
+    textView2.highlightedBackgroundColor = [UIColor orangeColor];
+    
+    textView2.autoWidth = YES;
+    textView2.autoHeight = YES; // Default is 'YES'
+    
+    textView2.frame = CGRectMake(20, 200, 300, 200);
+    textView2.text = @"在调用工厂类的工厂方法时，由于工厂方法是静态方法，使用起来很方便，可通过类名直接调用，而且只需要传入一个简单的参数即可，在实际开发中，还可以在调用时将所传入的参数保存在XML等格式的配置文件中，修改参数时无须修改任何源代码。";
+    textView2.yxkit_assist.attributedSubstring(@"在实际开发中", [UIColor orangeColor]);
+    [textView2 addClickTexts:@[@"在实际开发中",] callback:^(NSString *text, NSRange range) {
+        NSString *msg = [NSString stringWithFormat:@"text:%@,range:%@",text,NSStringFromRange(range)];
+        NSLog(@"%@",msg);
     }];
 }
 
