@@ -8,7 +8,7 @@
  * 一些简单的富文本应用
  
  示例图：
- 
+ ![图](https://github.com/sinexy/YXClickTextView/blob/master/example.jpg)
 
 使用示例：
 ```
